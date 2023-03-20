@@ -26,6 +26,23 @@ $f3->set('UI','ui/');		// folder for View templates
 $f3->route('GET /',
     function ($f3)
     {
+        $f3->set('html_title','Museum of Soul on Progress');
+        $f3->set('content','loading.html');
+        echo template::instance()->render('layoutLoading.html');
+    }
+);
+
+//home page (index.html) -- actually just shows form entry page with a different title
+$f3->route('GET /home',
+    function ($f3)
+    {
+        $controller = new SimpleController('quizDataBeta');
+        $todayEntry = $controller->getTodayEntry();    // Retrieve today's entry of the quiz
+        $alldata = $controller->getData();             // Retrieve all entry of the quiz
+
+        $f3->set("dailyRecord", $todayEntry);
+        $f3->set("dbData", $alldata);
+
         $f3->set('html_title','The Museum of Soul');
         $f3->set('content','home.html');
         echo template::instance()->render('layout.html');
@@ -66,15 +83,15 @@ $f3->route('POST /quizForm',
         $formdata["questionnaire3"] = $f3->get('POST.questionnaire3');
         $formdata["questionnaire4"] = $f3->get('POST.questionnaire4');
 
-        $controller = new SimpleController('quizData');
+        $controller = new SimpleController('quizDataBeta');
         $controller->putIntoDatabase($formdata);
 
         // Total score of the survey is calculated automatically by SQL query at 'quizForm'.
-        /* SQL query for totalScore = ALTER TABLE `quizData` ADD `totalScore` INT(48)
+        /* SQL query for totalScore = ALTER TABLE `quizDataBeta` ADD `totalScore` INT(48)
         AS (`ratingQ1` + `ratingQ2` + `ratingQ3`) NOT NULL AFTER `ratingQ3`;*/
 
         // A score rank will be assigned by SQl query to the user.
-        /* SQL query for scoreBand = ALTER TABLE `quizData` ADD `scoreBand` VARCHAR(48) AS (CASE
+        /* SQL query for scoreBand = ALTER TABLE `quizDataBeta` ADD `scoreBand` VARCHAR(48) AS (CASE
             WHEN totalScore BETWEEN 0 AND 25 THEN 'D'
             WHEN totalScore BETWEEN 26 AND 50 THEN 'C'
             WHEN totalScore BETWEEN 51 AND 75 THEN 'B'
@@ -129,6 +146,18 @@ $f3->route('POST /collection',
         echo template::instance()->render('layout.html');
     }
 );
+
+//==============================================================================
+// When using GET, provide the description of artist for the user
+$f3->route('GET /Amy',
+    function($f3)
+    {
+        $f3->set('html_title','Artist: Amy');
+        $f3->set('content','artist.html');
+        echo template::instance()->render('layout.html');
+    }
+);
+
 
 //==============================================================================
 // When using GET, provide the About page for the user

@@ -1,0 +1,12 @@
+<video width="100%" height="100%" autoplay muted style="object-fit: cover; height: 100vh; position: absolute;">
+    <source src="img/Video/opening video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<script>
+    $(document).ready(function(){
+        $('video').on('ended',function(){
+            window.location.href = "{{ @BASE }}/home";
+        });
+    });
+</script>

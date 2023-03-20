@@ -4,17 +4,6 @@ Each question has a score, which will be stored at 'quizForm' in database.
 The total score will be calculated within the 'quizForm' using SQL query.
 A scoreBand will be assigned for the user by the SQL query.
  -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
- <div class="row gradient-banner" style="margin-top: -40px;">
-    <div class="one-column">
-      <h2>“To grow yourself, you must know yourself.” <br> — <label class="pink-text">John C. Maxwell</label></h2>
-    </div>
-  </div>
->>>>>>> refs/remotes/origin/main
-=======
 
 <!--
 An input form for the survey related to art therapy.
@@ -22,31 +11,29 @@ Each question has a score, which will be stored at 'quizForm' in database.
 The total score will be calculated within the 'quizForm' using SQL query.
 A scoreBand will be assigned for the user by the SQL query.
  -->
->>>>>>> 557859c (commit for submission)
 
+<div class="row gradient-banner reveal1">
+  <video width="100%" height="100%" autoplay muted loop class="video-background">
+    <source src="img/Video/Banner-Quiz.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<body>
-
-<div class="row gradient-banner" style="margin-top: -40px;">
-  <div class="one-column">
-    <h2>“To grow yourself, you must know yourself.” <br> — <label class="pink-text">John C. Maxwell</label></h2>
+  <div class="one-column overlay">
+    <h2 style="color: #f2f2f2">“To grow yourself, you must know yourself.” <br> — <label class="pink-text">John C. Maxwell</label></h2>
   </div>
 </div>
 
-<<<<<<< HEAD
 <form id="form1" name="form1" method="post" action="{{ @BASE }}/quizForm">
   <!-- MBTI SECTION -->
   <div class="row">
-    <div class="two-column left">
-<<<<<<< HEAD
-      <img src="../img/MBTI/INTJ.png" id="mbti-image"
-          style="width:100%; margin-top: auto; margin-bottom: auto; vertical-align: baseline;">
-=======
-      <img src="img/MBTI/INTJ.png" id="mbti-image"
-           style="width:100%; margin-top: auto; margin-bottom: auto; vertical-align: baseline;">
->>>>>>> 557859c (commit for submission)
+    <div class="two-column left reveal" id="mbti-image">
+<!--      <img src="img/MBTI/INTJ.png" id="mbti-image" style="width:100%; margin-top: auto; margin-bottom: auto; vertical-align: baseline;">-->
+      <video width="100%" height="400" autoplay muted loop>
+        <source src="img/MBTI_Video/INTJ.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-    <div class="two-column right" style="padding-left: 3%;">
+    <div class="two-column right reveal" style="padding-left: 3%;">
       <h2>How much you know about <br><label class="pink-text">yourself</label> ?</h2>
       <h4>Help us to know more about your personality.</h4>
 
@@ -71,9 +58,7 @@ A scoreBand will be assigned for the user by the SQL query.
         <option value="ENFP">ESFP - Entertainer</option>
       </select>
 
-      <h4>Don't know your personality yet? <label class="pink-text"><a target="_blank"
-                                                                       href="https://www.16personalities.com/free-personality-test">Get
-        yourself tested</a></label></h4>
+      <h4>Don't know your personality yet? <label class="pink-text"><a target="_blank" href="https://www.16personalities.com/free-personality-test">Get yourself tested</a></label></h4>
     </div>
   </div>
 
@@ -81,23 +66,22 @@ A scoreBand will be assigned for the user by the SQL query.
     <div class="one-column">
 
       <!-- TITLE -->
-      <h4 style="font-size: 24px; font-weight:700;">
+      <h4 style="font-size: 24px; font-weight:700;" class="reveal">
         How often have you are bothered by <label class="pink-text">any</label> of these problems?
       </h4>
-      <br>
-      <h4 style="font-size: 20px; margin-top: -25px;">
-        Please rate from <label class="pink-text">1-10.</label>
-      </h4>
+<!--      <br>-->
+<!--      <h4 style="font-size: 20px; margin-top: -25px;" class="reveal">-->
+<!--        Please rate from <label class="pink-text">1-10.</label>-->
+<!--      </h4>-->
 
 
       <!-- QUESTION 1 -->
-      <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">1</label>
         <br>
         Little interest or pleasure in doing things.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ1" id="ratingQ1" onchange="onSliderValChange(this)">
@@ -107,12 +91,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 2 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">2</label>
         <br>
         Feeling down, depressed, or hopeless.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ2" id="ratingQ2" onchange="onSliderValChange(this)">
@@ -122,12 +106,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 3 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">3</label>
         <br>
         Have trouble on relaxing or falling or staying asleep, or the opposite - sleeping too much.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ3" id="ratingQ3" onchange="onSliderValChange(this)">
@@ -137,12 +121,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 4 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">4</label>
         <br>
         Feeling tired or having little energy.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ4" id="ratingQ4" onchange="onSliderValChange(this)">
@@ -152,12 +136,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 5 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">5</label>
         <br>
         Poor appetite or overeating.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ5" id="ratingQ5" onchange="onSliderValChange(this)">
@@ -167,12 +151,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 6 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">6</label>
         <br>
         Feeling bad about yourself or feel like you are a failure.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ6" id="ratingQ6" onchange="onSliderValChange(this)">
@@ -182,12 +166,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 7 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">7</label>
         <br>
         Trouble concentrating on things, such as reading newspaper or watching television.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ7" id="ratingQ7" onchange="onSliderValChange(this)">
@@ -197,12 +181,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 8 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">8</label>
         <br>
         Moving or speaking so slowly, or the opposite - being so restless that it is hard to sit still.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ8" id="ratingQ8" onchange="onSliderValChange(this)">
@@ -212,12 +196,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 9 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">9</label>
         <br>
         Thoughts that you would be better off dead, or of hurting yourself.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ9" id="ratingQ9" onchange="onSliderValChange(this)">
@@ -227,12 +211,12 @@ A scoreBand will be assigned for the user by the SQL query.
 
       <!-- QUESTION 10 -->
       <br>
-      <h4>
+      <h4 class="reveal">
         <label class="label-question">10</label>
         <br>
         Feeling nervous, anxious, or on edge.
       </h4>
-      <div class="slidecontainer">
+      <div class="slidecontainer reveal">
         <h4 style="font-size: 12px;">
           Never &nbsp;
           <input type="range" min="0" max="10" value="5" class="slider" name="ratingQ10" id="ratingQ10" onchange="onSliderValChange(this)">
@@ -246,13 +230,13 @@ A scoreBand will be assigned for the user by the SQL query.
   <div class="row">
     <div class="one-column">
       <!-- QUESTIONNAIRE TITLE -->
-      <h4 style="font-size: 24px; font-weight:700;">
+      <h4 style="font-size: 24px; font-weight:700;" class="reveal">
         Tell us <label class="pink-text">more</label>...
       </h4>
 
       <!-- QUESTIONNAIRE 1 -->
-      <h4>How much do you know about Art Therapy?</h4>
-      <div class="questionnaire-radio">
+      <h4 class="reveal">How much do you know about Art Therapy?</h4>
+      <div class="questionnaire-radio reveal">
         <ul class="questionnaire-radio-ul">
           <li>
             <input type="radio" id="never" name="questionnaire1" value="Never" checked />
@@ -276,8 +260,8 @@ A scoreBand will be assigned for the user by the SQL query.
       <!-- QUESTIONNAIRE 2 -->
       <br>
       <br>
-      <h4>Have you ever tried Art Therapy before?</h4>
-      <div class="questionnaire-radio">
+      <h4 class="reveal">Have you ever tried Art Therapy before?</h4>
+      <div class="questionnaire-radio reveal">
         <ul class="questionnaire-radio-ul">
           <li>
             <input type="radio" id="yes" name="questionnaire2" value="yes" checked />
@@ -293,14 +277,14 @@ A scoreBand will be assigned for the user by the SQL query.
       <!-- QUESTIONNAIRE 3 -->
       <br>
       <br>
-      <h4>If not, can you tell the reason?</h4>
-      <input name="questionnaire3" type="text" placeholder="Tell us your reason" class="textbox" id="questionnaire3" size="70" />
+      <h4 class="reveal">If not, can you tell the reason?</h4>
+      <input name="questionnaire3" type="text" placeholder="Tell us your reason" class="textbox reveal" id="questionnaire3" size="70" />
 
       <!-- QUESTIONNAIRE 4 -->
       <br>
       <br>
-      <h4>Which way do you prefer to deal with mental health problems?</h4>
-      <div class="questionnaire-radio">
+      <h4 class="reveal">Which way do you prefer to deal with mental health problems?</h4>
+      <div class="questionnaire-radio reveal">
         <ul class="questionnaire-radio-ul">
           <li>
             <input type="radio" id="selfhealing" name="questionnaire4" value="selfhealing" checked />
@@ -326,7 +310,7 @@ A scoreBand will be assigned for the user by the SQL query.
       <br>
       <br>
 
-      <input type="submit" name="Submit" value="Submit" class="button-style-1" />
+      <input type="submit" name="Submit" value="Submit" class="button-style-1 reveal" />
 
     </div>
   </div>
@@ -352,118 +336,62 @@ A scoreBand will be assigned for the user by the SQL query.
             + 'color-stop(' + val + ', #FF8A9F), '
             + 'color-stop(' + val + ', #393939)'
             + ')'
-<<<<<<< HEAD
-    );
-    // alert ($(this).val());
-  }
- 
- function mbtichange() {
-      if ($('#MBTI-type option:selected').text() == "INTJ - Architect") {
-        $('#mbti-image').attr('src', '../img/MBTI/INTJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "INTP - Logician") {
-        $('#mbti-image').attr('src', '../img/MBTI/INTP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ENTJ - Commander") {
-        $('#mbti-image').attr('src', '../img/MBTI/ENTJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ENTP - Debater") {
-        $('#mbti-image').attr('src', '../img/MBTI/ENTP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "INFJ - Advocate") {
-        $('#mbti-image').attr('src', '../img/MBTI/INFJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "INFP - Mediator") {
-        $('#mbti-image').attr('src', '../img/MBTI/INFP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ENFJ - Protagonist") {
-        $('#mbti-image').attr('src', '../img/MBTI/ENFJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ENFP - Campaigner") {
-        $('#mbti-image').attr('src', '../img/MBTI/ENFP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ISTJ - Logistician") {
-        $('#mbti-image').attr('src', '../img/MBTI/ISTJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ISFJ - Defender") {
-        $('#mbti-image').attr('src', '../img/MBTI/ISFJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ESTJ - Executive") {
-        $('#mbti-image').attr('src', '../img/MBTI/ESTJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ESFJ - Consul") {
-        $('#mbti-image').attr('src', '../img/MBTI/ESFJ.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ISTP - Virtuoso") {
-        $('#mbti-image').attr('src', '../img/MBTI/ISTP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ISFP - Adventurer") {
-        $('#mbti-image').attr('src', '../img/MBTI/ISFP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ESTP - Entrepreneur") {
-        $('#mbti-image').attr('src', '../img/MBTI/ESTP.png');
-      }
-      else if ($('#MBTI-type option:selected').text() == "ESFP - Entertainer") {
-        $('#mbti-image').attr('src', '../img/MBTI/ESFP.png');
-      }
-    }
-=======
         );
         // alert ($(this).val());
     }
 
     function mbtichange() {
         if ($('#MBTI-type option:selected').text() == "INTJ - Architect") {
-            $('#mbti-image').attr('src', '../img/MBTI/INTJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/INTJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "INTP - Logician") {
-            $('#mbti-image').attr('src', '../img/MBTI/INTP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/INTP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ENTJ - Commander") {
-            $('#mbti-image').attr('src', '../img/MBTI/ENTJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ENTJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ENTP - Debater") {
-            $('#mbti-image').attr('src', '../img/MBTI/ENTP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ENTP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "INFJ - Advocate") {
-            $('#mbti-image').attr('src', '../img/MBTI/INFJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/INFJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "INFP - Mediator") {
-            $('#mbti-image').attr('src', '../img/MBTI/INFP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/INFP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ENFJ - Protagonist") {
-            $('#mbti-image').attr('src', '../img/MBTI/ENFJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ENFJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ENFP - Campaigner") {
-            $('#mbti-image').attr('src', '../img/MBTI/ENFP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ENFP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ISTJ - Logistician") {
-            $('#mbti-image').attr('src', '../img/MBTI/ISTJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ISTJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ISFJ - Defender") {
-            $('#mbti-image').attr('src', '../img/MBTI/ISFJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ISFJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ESTJ - Executive") {
-            $('#mbti-image').attr('src', '../img/MBTI/ESTJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ESTJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ESFJ - Consul") {
-            $('#mbti-image').attr('src', '../img/MBTI/ESFJ.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ESFJ.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ISTP - Virtuoso") {
-            $('#mbti-image').attr('src', '../img/MBTI/ISTP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ISTP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ISFP - Adventurer") {
-            $('#mbti-image').attr('src', '../img/MBTI/ISFP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ISFP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ESTP - Entrepreneur") {
-            $('#mbti-image').attr('src', '../img/MBTI/ESTP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ESTP.mp4');
         }
         else if ($('#MBTI-type option:selected').text() == "ESFP - Entertainer") {
-            $('#mbti-image').attr('src', '../img/MBTI/ESFP.png');
+          $('#mbti-image video source').attr('src', 'img/MBTI_Video/ESTP.mp4');
         }
+        $("#mbti-image video")[0].load();
     }
 
->>>>>>> 557859c (commit for submission)
 </script>
 
 </body>

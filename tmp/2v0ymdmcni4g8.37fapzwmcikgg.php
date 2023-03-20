@@ -6,5 +6,6 @@ has been set as a global F3 variable, using $f3->set().
  -->
 
 <h1>Thanks for your data, <?= ($formData['name']) ?> ...</h1>
+<h1>Your MBTI, <?= ($formData['MBTI']) ?> ...</h1>
 <hr />
 <a href="<?= ($BASE) ?>/dataView">Show all data</a>

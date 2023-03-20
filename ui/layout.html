@@ -16,13 +16,14 @@ HTML contains the navigation bar at the top and the footer.
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
    <link rel="stylesheet" href="{{@BASE}}/ui/css/style.css" type="text/css">
+<!--   <link rel="stylesheet" href="css/style.css">-->
 
 </head>
 
 <body>
 
 <!-- HEADER -->
-<nav class="navbar navbar-expand-lg navbar-dark navheader">
+<nav class="navbar navbar-expand-lg navbar-dark navheader reveal2" id="navbar">
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,8 +32,8 @@ HTML contains the navigation bar at the top and the footer.
 
    <div class="collapse navbar-collapse topnav" id="navbarTogglerDemo02">
       <ul class="navbar-nav">
-         <li class="active" id="navbar-home">
-            <a href="{{ @BASE }}" class="navbar-item">
+         <li id="navbar-home">
+            <a href="{{ @BASE }}/home" class="navbar-item">
                <img src="img/00.Navbar/Navbar-Active.png" class="img-selected">
                Home
             </a>
@@ -44,7 +45,7 @@ HTML contains the navigation bar at the top and the footer.
             </a>
          </li>
          <li id="li-logo">
-            <a href="#" id="a-logo">
+            <a href="{{ @BASE }}/" id="a-logo">
                <img src="img/00.Navbar/Logo.png" class="navbar-logo">
             </a>
          </li>
@@ -61,27 +62,34 @@ HTML contains the navigation bar at the top and the footer.
             </a>
          </li>
       </ul>
+      <br>
+   </div>
+   <div class="row navbar-hr-div">
+      <hr class="navbar-hr">
    </div>
 </nav>
-<hr class="navbar-hr">
 
-<br>
+
+<div id="backtotop"></div>
 
 <include href="{{ @content }}" />
 
-<br>
+<a href="#backtotop" id="stickybacktotop"><img src="img/00.Navbar/Footer-TopButton.png" class="top-button"></a>
 
 <!-- FOOTER -->
 
 <footer>
-   <div class="navbar-footer">
-      <hr class="navbar-hr">
+   <div class="navbar-footer reveal">
+<!--      <div class="top-button-div">-->
+<!--         <a href="#backtotop" style="text-align: right; alignment: right"><img src="img/00.Navbar/Footer-TopButton.png" class="top-button"></a>-->
+<!--      </div>-->
+      <hr class="navbar-hr"><br>
       <img src="img/00.Navbar/Logo.png" style="width: 50px;">
       <p style="text-align: center; color: #efefef; font-size: 14px; margin-bottom: 0px;">© 2023 The Museum of Soul
       </p>
       <ul class="footer-ul">
          <li id="footer-home">
-            <a href="{{ @BASE }}/" class="footer-item">Home</a>
+            <a href="{{ @BASE }}/home" class="footer-item">Home</a>
          </li>
          <li id="footer-quiz">
             <a href="{{ @BASE }}/quiz" class="footer-item">Quiz</a>
@@ -104,6 +112,7 @@ HTML contains the navigation bar at the top and the footer.
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+<script src="ui/js/script.js"></script>
 
 
 <script>
@@ -188,8 +197,11 @@ HTML contains the navigation bar at the top and the footer.
         else if ((page == "") || ("home.html")) {
             $("#navbar-home").addClass("active");
         }
+        else
+        {
+           $("#navbar-home").removeClass("active");
+        }
     });
-
 </script>
 
 

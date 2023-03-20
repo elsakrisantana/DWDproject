@@ -4,7 +4,7 @@ SimpleControllerAjax mapped with the 'artCollection' in the database.
  -->
 
 <repeat group="{{ @dbData }}" value="{{ @record }}">
-    <div class="row">
+    <div class="row reveal2">
         <div class="two-column left">
             <!-- <img src="img/{{ trim(@record.file) }}" alt="HTML5 Icon" style="width:100%; margin-top: auto; margin-bottom: auto; vertical-align: baseline;"> -->
             <img src="img/chipmunk.jpg"
@@ -16,6 +16,8 @@ SimpleControllerAjax mapped with the 'artCollection' in the database.
             <label class="tag">{{ trim(@record.MBTI) }}</label>
             <label class="tag">{{ trim(@record.type) }}</label>
             <h4>by {{ trim(@record.artist) }}</h4>
+            <br>
+            <h4>{{ trim(@record.description) }}</h4>
             <br>
             <a class="button-style-1" href="{{ @BASE }}/collection">Explore More Artworks</a>
         </div>

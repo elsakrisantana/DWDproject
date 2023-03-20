@@ -10,6 +10,23 @@ class SimpleController {
 		$this->mapper = new DB\SQL\Mapper($f3->get('DB'), $table);	// create DB query mapper object
 	}
 
+    public function getData() {
+        $list = $this->mapper->find();
+        return $list;
+    }
+
+    public function getTodayEntry() {
+
+        //$count = $this->mapper->count(array('date' => 'GETDATE()'));
+        //$date = date('Y-m-d H:i:s');
+        $date = date('Y-m-d');
+        //$date = gmdate("Y F jS");
+        //$todayEntry = $this->mapper->find(array('date=?', $date));
+        $todayEntry = $this->mapper->find(["date LIKE ?", "%" . $date . "%"]);
+        return $todayEntry;
+
+    }
+
 	public function putIntoDatabase($data)
 	{
 		$this->mapper->name   = $data["name"];

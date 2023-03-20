@@ -1,38 +1,41 @@
-<<<<<<< HEAD
-	<div class="row gradient-banner" style="margin-top: -40px;">
-		<div class="one-column">
-			<img src="../img/01.Home/icon-art.png" class="img-icon">
-=======
 <!--
 The art collection at the 'artCollection' will be loaded at here.
 A search function is used for searching the art collection based on different characteristics, e.g. name, MBTI, and artist and etc.
  -->
->>>>>>> 557859c (commit for submission)
 
-<div class="row gradient-banner" style="margin-top: -40px;">
-	<div class="one-column">
-		<img src="img/01.Home/icon-art.png" class="img-icon">
+<div class="row fullscreen reveal1">
+	<video width="100%" height="840vh" autoplay muted loop class="video-background" style="margin-top: -200px">
+		<source src="img/Video/Banner-Collection.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+
+	<!--	</div>-->
+	<div class="one-column overlay">
+		<!--		<img src="img/01.Home/icon-art.png" class="img-icon">-->
 
 		<h2>
 			Explore Our Collection of<br>
 			<label class="pink-text">Therapy Artworks</label>
 		</h2>
+		<h4 style="color: #242424">
+			Art is a wonderful form of therapy.
+		</h4>
 
 		<form action="{{ @BASE }}/collection" method="post">
-			<input type="text" name="term" class="textbox" id="textbox-search" size="50"
+			<input type="text" name="term" class="textbox2" id="textbox-search" size="50"
 				   placeholder="Search collection by Name">
-			<select name="field" id="select-search" onchange="searchChange()">
+			<select name="field" id="select-search" onchange="searchChange()" class="select-collection">
 				<option value="name">Name</option>
 				<option value="artist">Artist</option>
 				<option value="MBTI">MBTI</option>
-				<option value="type">Type</option>
+				<!--<option value="type">Type</option>-->
 			</select>
-			<input type="submit" name="submit" value="Search" class="button-style-2" style="margin-left: 20px;">
+			<input type="submit" name="submit" value="Search" class="button-style-1" style="margin-left: 20px;">
 		</form>
 	</div>
 </div>
 
-<div class="row">
+<div class="row reveal">
 	<div class="one-column">
 		<h2><label class="pink-text">A</label>rtworks</h2>
 	</div>
@@ -40,7 +43,7 @@ A search function is used for searching the art collection based on different ch
 
 <div class="collection-div">
 	<repeat group="{{ @dbData }}" value="{{ @record }}">
-		<div class="four-column">
+		<div class="four-column reveal">
 			<img src="img/{{ trim(@record.file) }}" alt="{{ trim(@record.name) }}" class="collection-image">
 			<h4 style="text-align:left; font-weight:600; margin-top: 10px; margin-bottom: 0px;">
 				<label class="pink-text">{{ trim(@record.name) }}</label>
@@ -49,6 +52,7 @@ A search function is used for searching the art collection based on different ch
 				<label class="tag" style="text-align: left;">{{ trim(@record.type) }}</label>
 			</h4>
 			<h4 style="margin-top: 0px; font-size: 12px; text-align: left;">- {{ trim(@record.artist) }}</h4>
+			<!--			<a href="https://dpoon.edinburgh.domains/Museum-of-Soul/{{ trim(@record.artist) }}/"> {{ trim(@record.artist) }}</a>-->
 		</div>
 	</repeat>
 </div>

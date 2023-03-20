@@ -10,14 +10,14 @@
 @font-face {
     font-family: 'PP Hatton';
     src: url('../font/PPHatton-Medium.otf');
-    font-weight: medium;
+    font-weight: 2;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'PP Hatton';
     src: url('../font/PPHatton-Ultralight.otf');
-    font-weight: ultralight;
+    font-weight: 1;
     font-style: normal;
 }
 
@@ -32,32 +32,44 @@ html {
 body {
     margin: 0;
     font-family: "Montserrat Alternates";
-    background-color: #1E1E1E;
+    background-color: #242424;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
 }
 
 .navheader {
     padding-top: 10px;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     width: 100%;
+    background-color: #242424;
+    z-index: 5;
 }
 
 .topnav {
-    position: relative;
+    position: fixed;
     overflow: hidden;
-    background-color: #1E1E1E;
+    background-color: #242424;
     width: 100%;
 
     /* border: 1px solid #ccc; */
     border-width: 1px 0;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-top: -10px;
+    margin-left: -16px;
+    margin-right: -16px;
+    /*padding: 0;*/
+    /*padding-bottom: 10px;*/
     text-align: center;
+    height: 100px;
 }
 
 .navbar-nav {
     width: 100%;
-    display: inline;
+    display: block;
 }
 
 .navbar-nav li {
@@ -70,13 +82,14 @@ body {
     display: block; */
     color: #f2f2f2;
     text-align: center;
-    /* padding: 14px 16px; */
+    /*padding: 14px 16px;*/
     text-decoration: none;
     font-size: 16px;
+    min-height: 90%;
 
     display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 7px;
     margin-left: 4%;
     margin-right: 4%;
 }
@@ -85,6 +98,7 @@ body {
     color: #FF8A9F;
     font-weight: 700;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .active a {
@@ -106,8 +120,9 @@ body {
     height: 45px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 2px;
+    margin-top: 12px;
     margin-bottom: -10px;
+    transition: 0.3s;
 }
 
 .navbar-logo:hover {
@@ -117,6 +132,22 @@ body {
 .navbar-hr {
     border-color: #f2f2f2;
     opacity: 20%;
+    height: 3px;
+    width:100%;
+    margin-bottom: 0px;
+}
+
+.navbar-hr-div {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    padding-top: 30px;
+    margin-bottom: -30px;
+    vertical-align: bottom;
+}
+
+.backtotop {
+    height: 76px;
 }
 
 /* ============================= */
@@ -125,7 +156,7 @@ body {
 .navbar-footer {
     position: relative;
     overflow: hidden;
-    background-color: #1E1E1E;
+    background-color: #242424;
     width: 100%;
 
     /* border: 1px solid #ccc; */
@@ -166,13 +197,33 @@ body {
     text-decoration: none;
 }
 
+.top-button {
+    width: fit-content;
+    height: 50px;
+    display: inline-block;
+    margin-right: 0px;
+    /*margin-bottom: -15px;*/
+    /*float: right;*/
+    transition: height 1s;
+}
+
+.top-button:hover {
+    height: 53px;
+    content:url("../../img/00.Navbar/Footer-TopButton-Hover.png");
+}
+
+#stickybacktotop {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 10;
+}
 
 /* ============================= */
 /* ====== CONTENT SECTION ====== */
 /* ============================= */
 
 /* COLUMN */
-
 .row {
     width: 100%;
     height: fit-content;
@@ -301,6 +352,15 @@ body {
     background-image: linear-gradient(to right, #4d4d4d 0%, #393939 51%, #232323 100%);
 }
 
+.fullscreen {
+    min-height: 590px;
+}
+
+.fullscreen .one-column {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 /* TEXT */
 h1 {
     font-family: 'PP Hatton';
@@ -368,7 +428,7 @@ p {
 /* ETC */
 #museum-logo {
     width: 80%;
-    margin-top: -5%px;
+    margin-top: -5%;
     margin-left: -10%;
 }
 
@@ -392,9 +452,9 @@ p {
 }
 
 .ourteam-image {
-    width:100%;
-    min-height:200px;
-    height: 200px;
+    width:60%;
+    min-height:150px;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -420,13 +480,15 @@ p {
     border-radius: 30px;
     border: none;
     background-image: linear-gradient(to right, #4d4d4d 0%, #393939 51%, #232323 100%);
+
 }
 
 .button-style-1:hover {
     background-position: right center;
     /* change the direction of the change here */
     text-decoration: none;
-    color: #FF8A9F;
+    color: #F2f2f2;
+    background-image: linear-gradient(to left, #FF8A9F 0%, #393939 100%);
 }
 
 .button-style-2 {
@@ -522,10 +584,21 @@ select {
     margin-bottom: 5px;
 }
 
+.select-collection {
+    border: 1px solid rgba(242, 242, 242, 0.5);
+    border-radius: 15px;
+    padding: 15px;
+    color: #242424;
+    background: rgba(242, 242, 242, 0.5);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 #form1 a {
     text-decoration: underline;
     font-weight: 500;
     color: #FF8A9F;
+    transition: 0.5s;
 }
 
 #form1 a:hover {
@@ -544,6 +617,25 @@ select {
     background-color: transparent;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.textbox2 {
+    border: 1px solid rgba(242, 242, 242, 0.5);
+    /* outline-color: #FF8A9F; */
+    border-radius: 15px;
+    padding: 15px;
+    color: #242424;
+    /*background-color: transparent;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.textbox1, textarea {
+    background: transparent;
+}
+
+.textbox2, textarea {
+    background: rgba(242, 242, 242, 0.5);
 }
 
 .label-question {
@@ -607,7 +699,7 @@ select {
 
 .questionnaire-radio-ul input[type="radio"] {
     opacity: 0.01;
-    z-index: 100;
+    z-index: -1;
 }
 
 .questionnaire-radio-ul input[type="radio"]:checked+label,
@@ -621,18 +713,21 @@ select {
     color: #f2f2f2;
     border-radius: 20px;
     cursor: pointer;
-    z-index: 90;
-
+    z-index: -1;
     font-size: 14px;
+    transition: 0.5s;
 }
 
-.questionnaire-radio-ullabel:hover {
-    background: #DDD;
+.questionnaire-radio-ul label:hover {
+    background: #f2f2f2;
+    color: #242424;
+    font-weight: bold;
 }
 
 /* SLIDER
 Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 .slider {
+    z-index: -3;
     -webkit-appearance: none;
     width: 70%;
     height: 8px;
@@ -651,10 +746,12 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 }
 
 .slider:hover {
+    z-index: -3;
     opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
+    z-index: -3;
     -webkit-appearance: none !important;
     appearance: none;
     width: 25px;
@@ -665,6 +762,7 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 }
 
 .slider::-moz-range-thumb {
+    z-index: -3;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -673,9 +771,98 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 }
 
 .slider::-moz-range-progress {
+    z-index: -3;
     background: red;
 }
 
+/*REVEAL TRANSITION*/
+/*Reference : https://alvarotrigo.com/blog/css-animations-scroll/*/
+
+.reveal{
+    position: relative;
+    transform: translateY(120px);
+    opacity: 0;
+    transition: 0.7s all ease;
+}
+
+.reveal.activate{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal1{
+    position: relative;
+    transform: translateY(60px);
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+
+.reveal1.activate{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal2{
+    position: relative;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: 0.7s all ease;
+}
+
+.reveal2.activate{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal3{
+    position: relative;
+    transform: translateX(120px);
+    opacity: 0;
+    transition: 0.7s all ease;
+}
+
+.reveal3.activate{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* VIDEO BACKGROUND & TEXT OVERLAY */
+/*Source : https://stackoverflow.com/questions/10422105/add-text-above-html5-video*/
+.video-background {
+    /*position: fixed;*/
+    right: 0;
+    top: 0;
+    /*min-width: 100%;*/
+    /*min-height: 100%;*/
+    /*min-height: 720vh;*/
+    z-index: 0;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    align-self: center;
+    z-index: 1;
+    /*background: rgba(24,24,24, 0.3)*/
+}
+
+.text-banner {
+    /*font-size: 20px;*/
+    align-self: center;
+}
+
+.overlay-bg {
+    position: absolute;
+    top: 0;
+    background: rgba(24,24,24, 0.3);
+    height: 100%;
+    width: 100%;
+}
+
+.overlay h2 {
+    color: #242424;
+}
 
 /* ============================= */
 /* ==== SCREEN MEDIA NAVBAR ==== */
@@ -684,29 +871,71 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
 @media screen and (max-width: 991px) {
 
     /* NAVBAR */
+    .sticky {
+        position: fixed;
+        top: auto;
+        width: 100%
+    }
+
     .navheader {
         min-height: 70px;
         padding: 0%;
+    }
+
+    .topnav {
+        position: relative;
+        margin:0;
+        padding: 0;
+        height: 100%;
     }
 
     .navbar-nav {
         display: flex;
     }
 
+    .navbar-item {
+        display: inline-block;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
     .navbar-logo {
         display: none;
     }
 
+    /*.navbar-hr {*/
+    /*    border-color: #f2f2f2;*/
+    /*    opacity: 20%;*/
+    /*    height: 3px;*/
+    /*    width:100%;*/
+    /*    margin-bottom: 0px;*/
+    /*}*/
+
+    .navbar-hr-div {
+        width: 100%;
+        display: block;
+        margin-top: 0px;
+        padding-top: 0px;
+        margin-bottom: 0px;
+        vertical-align: bottom;
+    }
+
     .navbar-toggler {
-        background-color: #1E1E1E;
+        background-color: #242424;
         margin-top: 2%;
         margin-bottom: 0%;
         margin-right: 2%;
         margin-left: auto;
-        min-height: 50px;
+        min-height: 80px;
     }
 
     /* FOOTER */
+    .navbar-footer {
+        margin-top: 30px;
+    }
+
     .footer-ul {
         display: inline;
     }
@@ -758,11 +987,22 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
         width: 100%;
         height: 250px;
         text-align: center;
-        padding-top: 10px;
+        padding-top: 20px;
         padding-bottom: 10px;
         padding-left: 10px;
         padding-right: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
+    }
+
+    .ourteam-image {
+        width:50%;
+        min-height:150px;
+        height: fit-content;
+        object-fit: cover;
+    }
+
+    .ourteamtitle {
+        margin-top: 25px;
     }
 
     .collection-div {
@@ -888,9 +1128,9 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
         object-position: center;
     }
 
-    /* #select-search {
-        width: 100px;
-        margin-right: 15%;
-    } */
+    .backtotop {
+        height: 120px;
+    }
 
 }
+
