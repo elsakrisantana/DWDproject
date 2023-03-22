@@ -444,10 +444,14 @@ p {
     width: 120px;
 }
 
+.collection {
+    height: 400px;
+}
+
 .collection-image {
     width:100%;
     min-height:150px;
-    height: 150px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -1132,5 +1136,13 @@ Source : https://www.w3schools.com/howto/howto_js_rangeslider.asp */
         height: 120px;
     }
 
-}
+    .collection {
+        height: 600px;
+    }
 
+    .collection-image {
+        min-height:250px;
+        height: 450px;
+    }
+
+}
