@@ -7,7 +7,7 @@ class SimpleControllerAjax {
 	
 	public function __construct() {
 		global $f3;						// needed for $f3->get() 
-		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"artCollection");	// create DB query mapper object for 'artCollection' table
+		$this->mapper = new DB\SQL\Mapper($f3->get('DB'),"artCollectionBeta");	// create DB query mapper object for 'artCollection' table
 	}
 
 	public function getData() {
@@ -20,7 +20,7 @@ class SimpleControllerAjax {
 		return $list;
 	}
 
-	// Used for searching an art collection based on the MBTI and scoreBand of user
+	// Used for searching an art collection based on the MBTI and category of user
 	public function artSearching($field1, $term1, $field2, $term2) {
 		$list = $this->mapper->find([$field1 . " LIKE ? AND " . $field2 . " LIKE ?", "%" . $term1 . "%", "%" . $term2 . "%"]);
 		return $list;

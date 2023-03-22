@@ -17,16 +17,17 @@ HTML contains the homepage elements.
 <div class="row gradient-banner reveal">
     <div class="three-column">
         <!--        Return the number of daily entry for the quiz-->
-        <h2 class="reveal">{{ count(@dailyRecord) }}<label class="pink-text">+</label></h2>
+        <h2 class="reveal">{{ count(@dailyRecord) }}</h2>
         <h4 class="reveal">Users has taken our test today</h4>
     </div>
     <div class="three-column">
         <!--        Return the number of total entry for the quiz-->
-        <h2 class="reveal">{{ count(@dbData) }}<label class="pink-text">+</label></h2>
+        <h2 class="reveal">{{ count(@dbData) }}</h2>
         <h4 class="reveal">Users has taken our test in total</h4>
     </div>
     <div class="three-column">
-        <h2 class="reveal">100<label class="pink-text">+</label></h2>
+        <!--        Return the number of total number of artwork-->
+        <h2 class="reveal">{{ count(@artData) }}</h2>
         <h4 class="reveal">Artworks specifically made for you</h4>
     </div>
 </div>

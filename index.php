@@ -40,8 +40,12 @@ $f3->route('GET /home',
         $todayEntry = $controller->getTodayEntry();    // Retrieve today's entry of the quiz
         $alldata = $controller->getData();             // Retrieve all entry of the quiz
 
+        $controller = new SimpleControllerAjax;
+        $artdata = $controller->getData();       // Retrieve artwork data
+
         $f3->set("dailyRecord", $todayEntry);
         $f3->set("dbData", $alldata);
+        $f3->set("artData", $artdata);
 
         $f3->set('html_title','The Museum of Soul');
         $f3->set('content','home.html');
@@ -88,25 +92,23 @@ $f3->route('POST /quizForm',
 
         // Total score of the survey is calculated automatically by SQL query at 'quizForm'.
         /* SQL query for totalScore = ALTER TABLE `quizDataBeta` ADD `totalScore` INT(48)
-        AS (`ratingQ1` + `ratingQ2` + `ratingQ3`) NOT NULL AFTER `ratingQ3`;*/
+        AS ((ratingQ1 + ratingQ2 + ratingQ3 + ratingQ4 + ratingQ5 + ratingQ6 + ratingQ7 + ratingQ8 + ratingQ9 + ratingQ10)) NOT NULL AFTER `ratingQ10`;*/
 
         // A score rank will be assigned by SQl query to the user.
-        /* SQL query for scoreBand = ALTER TABLE `quizDataBeta` ADD `scoreBand` VARCHAR(48) AS (CASE
-            WHEN totalScore BETWEEN 0 AND 25 THEN 'D'
-            WHEN totalScore BETWEEN 26 AND 50 THEN 'C'
-            WHEN totalScore BETWEEN 51 AND 75 THEN 'B'
-            WHEN totalScore BETWEEN 76 AND 100 THEN 'A' ELSE 'NA' END) NOT NULL AFTER `totalScore`;*/
+        /* SQL query for category = ALTER TABLE `quizDataBeta` ADD `category` VARCHAR(48) AS (CASE
+            WHEN totalScore BETWEEN 0 AND 50 THEN 'B'
+            WHEN totalScore BETWEEN 50 AND 100 THEN 'A' ELSE 'NA' END) NOT NULL AFTER `totalScore`;*/
 
         // SQL query is used to simplify the code written at index.php and allow a clearer mapping.
 
-        // Retrieve the scoreBand of the user from 'quizForm' of database
+        // Retrieve the cateory of the user from 'quizForm' of database
         $userData = $controller->getUserTableFromStr($formdata["name"]);
-        $scoreBand = $userData["scoreBand"];
+        $category = $userData["category"];
 
 
-        // Retrieve the art collection from 'artCollection' at database, according to the MBTI type and scoreBand of user
+        // Retrieve the art collection from 'artCollection' at database, according to the MBTI type and category of user
         $controllerAjax = new SimpleControllerAjax;
-        $alldata = $controllerAjax->artSearching('MBTI', $formdata["MBTI"], 'scoreBand',$scoreBand);
+        $alldata = $controllerAjax->artSearching('MBTI', $formdata["MBTI"], 'category',$category);
         // Retrieve one art collection randomly for the user
         shuffle($alldata);
         $record = $alldata[0];
@@ -126,7 +128,7 @@ $f3->route('GET /collection',
         $controller = new SimpleControllerAjax;
         $alldata = $controller->getData();
 
-        $f3->set("dbData", $alldata);
+        $f3->set('dbData', $alldata);
         $f3->set('html_title','The Art Collection');
         $f3->set('content','artView.html');
         echo template::instance()->render('layout.html');
@@ -140,7 +142,7 @@ $f3->route('POST /collection',
         $controller = new SimpleControllerAjax;
         $alldata = $controller->search($f3->get('POST.field'), $f3->get('POST.term'));
 
-        $f3->set("dbData", $alldata);
+        $f3->set('dbData', $alldata);
         $f3->set('html_title','The Art Collection');
         $f3->set('content','artView.html');
         echo template::instance()->render('layout.html');
@@ -153,7 +155,7 @@ $f3->route('GET /Amy',
     function($f3)
     {
         $f3->set('html_title','Artist: Amy');
-        $f3->set('content','artist.html');
+        $f3->set('content','artViewDemo.html');
         echo template::instance()->render('layout.html');
     }
 );
